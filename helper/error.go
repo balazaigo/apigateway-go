@@ -1,6 +1,8 @@
 package helper
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func RespWriter (c *gin.Context, message string,statusCode int) {
 	status := "failure"

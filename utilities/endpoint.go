@@ -10,9 +10,9 @@ type EndPoint struct {
 	Url string
 }
 
-const Host = "http://devapi.zaicrm.com/"
+const Host = "http://devapi.zaicrm.com"
 
-const Prefix = Host + "api/"
+const Prefix = Host + "/api/"
 
 var Urls = map[string]string{
 	"/login": Prefix+"auth/login",
