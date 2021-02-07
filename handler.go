@@ -34,7 +34,8 @@ func RequestHandler() {
 			}
 
 			if _, ok := tkn.Claims.(jwt.MapClaims); ok && tkn.Valid {
-				fmt.Println(tkn.Claims)
+			//if claims, ok := tkn.Claims.(jwt.MapClaims); ok && tkn.Valid {
+				//claims -> will retrieve the claims from the token, in case if we need to validate additionally we need to access this map object and validate it.
 				proxyRequest(finalUrl, c)
 				return
 			}
