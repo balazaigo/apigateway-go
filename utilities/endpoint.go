@@ -10,7 +10,7 @@ type EndPoint struct {
 	Url string
 }
 
-const Host = "http://devapi.zaicrm.com"
+const Host = "http://zaiserveurl.com"
 
 const Prefix = Host + "/api/"
 
