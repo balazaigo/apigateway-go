@@ -12,8 +12,6 @@ import (
 	"strings"
 )
 
-const jwtKey = "7Bn6dTXzPIVYFTyPHSCGZH9RhKY1JyebTbCeazM82wB0xWNvNA94FSH3zAbiFvca"
-
 func RequestHandler() {
 	r := gin.Default()
 	r.Any("/api/*any", func(c *gin.Context) {
@@ -27,7 +25,7 @@ func RequestHandler() {
 				if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 					return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 				}
-				return []byte(jwtKey), nil
+				return []byte(helper.GetJwtKey()), nil
 			})
 			if err != nil {
 				helper.RespWriter(c, "something went wrong "+err.Error(), http.StatusBadGateway)
